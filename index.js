@@ -2,8 +2,10 @@ const express = require("express");
 const app = express();
 const notes = require('./DummyData/notes')
 const dotenv = require("dotenv")
+const connectDB = require('./config/db')
 
 dotenv.config();
+connectDB();
 
 app.get("/", (req, res) => {
   res.send("hello world");
